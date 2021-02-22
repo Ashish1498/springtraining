@@ -28,12 +28,15 @@ public class SearchServiceimpl implements Service {
         {
             ProductDTO product=new ProductDTO();
             String brandName=productObjectList.get(i).get("name").toString();
-            System.out.println(brandName);
+            String brandDescription=productObjectList.get(i).get("description").toString();
+            int brandPrice= ((Double) productObjectList.get(i).get("salePrice")).intValue();
+            boolean inStock=(int) productObjectList.get(i).get("isInStock") ==1? true:false;
 
-
-            product.setDescription("Apple iphone 11 pro..");
             product.setTitle(brandName);
-            product.setInStock(true);
+            product.setDescription(brandDescription);
+            product.setSalePrice(brandPrice);
+            product.setInStock(inStock);
+
             list.add(product);
 
         }
