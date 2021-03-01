@@ -17,6 +17,7 @@ public class MyController {
     public String helloWorldPost(){
         return "Sucess again!!";
     }
+
     @GetMapping(path = "/hello-query")
     public String helloQuery(@RequestParam String query) {
         return "query "+query;
